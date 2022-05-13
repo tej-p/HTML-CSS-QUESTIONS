@@ -1,0 +1,28 @@
+
+const swap = (arr, a, b) => {
+    var p = arr[a];
+    arr[a] = arr[b];
+    arr[b] = p;
+  
+}
+
+
+
+
+const swap = (A1, A2, a,b) => {
+    var p = A1[a];
+    A1[a] = A1[b];
+    A1[b] = p;
+    
+    var q = A2[a];
+    A2[a] = A2[b];
+    A2[b] = q;
+}
+
+
+
+
+**swap type 2.....
+function swap(arr,i,j) {
+    [ arr[i],arr[j] ] = [ arr[j],arr[i] ]
+}
