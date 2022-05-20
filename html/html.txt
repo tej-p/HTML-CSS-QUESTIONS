@@ -1,3 +1,144 @@
 Question-What is !important?
 
 Answer-
+In CSS, important means that only the ! important property value is to be applied to an element and
+all other declarations on the element are to be ignored. In other words, an important rule can be
+used to override other styling rules in CSS.
+
+Question-What is the box model?
+
+Answer-
+In CSS, the term "box model" is used when talking about design and layout.The CSS box model is
+essentially a box that wraps around every HTML element. It consists of: margins, borders, padding,
+and the actual content.
+
+Question-What is the difference between position absolute, relative and fixed?
+
+Answer-
+Relative Position: 
+                Setting the top, right, bottom, and left properties of an element with
+position: relative; property will cause it to adjust from its normal position. The other objects or
+elements will not fill the gap.
+
+Absolute Position: 
+                An element with position: absolute; will cause it to adjust its position with 
+respect to its parent. If no parent is present, then it uses the document body as parent.
+
+Fixed Position:
+            Position: fixed; property applied to an element will cause it to always stay in the same 
+place even if the page is scrolled. To position the element we use top, right, bottom, left 
+properties.
+
+Question-What is CSS positioning?
+
+Answer-
+The CSS position property is used to set position for an element. it is also used to place an element
+behind another and also useful for scripted animation effect.
+
+You can position an element using the top, bottom, left and right properties. These properties can be 
+used only after position property is set first. A position element's computed position property is 
+relative, absolute, fixed or sticky.
+
+These are some css positioning property:
+
+CSS Static Positioning
+CSS Fixed Positioning
+CSS Relative Positioning
+CSS Absolute Positioning
+
+Question-the difference between display none and display hidden
+
+Answer-
+the difference between display: “none”; and visibility: “hidden”; right from the name itself we can 
+tell the difference as display: “none”; completely gets rids of the tag, as it had never existed in 
+the HTML page whereas visibility: “hidden”; just makes the tag invisible, it will still on the HTML 
+page occupying space it’s just invisible.
+
+Question-Difference between flex and grid? Where to use it?
+
+Answer-
+Grid:
+    CSS Grid Layout, is a two-dimensional grid-based layout system with rows and columns, making it 
+easier to design web pages without having to use floats and positioning. Like tables, grid layout 
+allow us to align elements into columns and rows.
+
+To get started you have to define a container element as a grid with display: grid, set the column 
+and row sizes with grid-template-columns and grid-template-rows, and then place its child elements 
+into the grid with grid-column and grid-row.
+
+Flexbox: 
+        The CSS Flexbox offers a one-dimensional layout. It is helpful in allocating and aligning 
+the space among items in a container (made of grids). It works with all kinds of display devices and 
+screen sizes.
+To get started you have to define a container element as a grid with display: flex;
+
+Difference Between Grid and Flexbox:
+1. Dimensionality and Flexibility:
+                                Flexbox offers greater control over alignment and space distribution
+ between items. Being one-dimensional, Flexbox only deals with either columns or rows.
+Grid has two-dimension layout capabilities which allow flexible widths as a unit of length. 
+This compensates for the limitations in Flex.
+
+2. Alignment:
+
+Flex Direction allows developers to align elements vertically or horizontally, which is used when 
+developers create and reverse rows or columns.
+CSS Grid deploys fractional measure units for grid fluidity and auto-keyword functionality to 
+automatically adjust columns or rows.
+
+3. Item Management
+
+Flex Container is the parent element while Flex Item represents the children. The Flex Container can 
+ensure balanced representation by adjusting item dimensions. This allows developers to design for 
+fluctuating screen sizes.
+Grid supports both implicit and explicit content placement. Its inbuilt automation allows it to 
+automatically extend line items and copy values into the new creation from the preceding item.
+
+Question-What is BEM?
+
+Answer-
+BEM (which stands for Block-Element-Modifier) is a naming convention standard for CSS class names. 
+It has fairly wide adoption and is immensely useful in writing CSS that is easier to read, 
+understand, and scale.
+
+Question-What is the z-index? What is the stacking context?
+
+Answer-
+Z Index ( z-index ) is a CSS property that defines the order of overlapping HTML elements. Elements 
+with a higher index will be placed on top of elements with a lower index.Z index only works 
+on positioned elements ( position:absolute , position:relative , or position:fixed ).
+
+The stacking context is a three-dimensional conceptualization of HTML elements along an imaginary 
+z-axis relative to the user, who is assumed to be facing the viewport or the webpage. HTML elements 
+occupy this space in priority order based on element attributes.
+
+Question-Explain briefly what happens when you hit a url? explain DNS lookup
+
+Answer-
+Steps for what happens when we enter a URL :
+
+1. Browser checks cache for DNS entry to find the corresponding IP address of website.
+It looks for following cache. If not found in one, then continues checking to the next until found.
+    Browser Cache
+    Operating Systems Cache
+    Router Cache
+    ISP Cache
+
+2. If not found in cache, ISP’s (Internet Service Provider) DNS server initiates a DNS query to find 
+IP address of server that hosts the domain name.
+The requests are sent using small data packets that contain information content of request and IP 
+address it is destined for.
+
+3. Browser initiates a TCP (Transfer Control Protocol) connection with the server using 
+synchronize(SYN) and acknowledge(ACK) messages.
+
+4. Browser sends an HTTP request to the web server. GET or POST request.
+
+5. Server on the host computer handles that request and sends back a response. It assembles a 
+response in some format like JSON, XML and HTML.
+
+6. Server sends out an HTTP response along with the status of response.
+
+7. Browser displays HTML content
+
+8. Finally, Done.
