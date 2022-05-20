@@ -314,3 +314,110 @@ Answer-
 Cross-Origin Resource Sharing (CORS) is an HTTP-header based mechanism that allows a server to 
 indicate any origins (domain, scheme, or port) other than its own from which a browser should permit
 loading resources.
+
+Question-What does Access-Control-Allow-Origin header do?
+
+Answer-
+The Access-Control-Allow-Origin header is included in the response from one website to a request 
+originating from another website, and identifies the permitted origin of the request.
+
+Question-What is clickjacking? How do you fix it?
+
+Answer-
+Clickjacking is an attack that fools users into thinking they are clicking on one thing when they are
+actually clicking on another. Its other name, user interface (UI) redressing, better describes what 
+is going on.
+
+In order to fix the issue, we must know the underlying reason that is causing the issue. 
+Clickjacking is caused due to allowing permission to a third party website to embed the vulnerable 
+site using Iframe. Disallowing this can be done by setting HTTP headers that direct browser to not 
+allow the target website to be iframed. This can be done by configuring server on the following two 
+response headers: X-Frame-Options Content-Security-Policy. It can also be done using JavaScript code 
+
+X-Frame-Options:
+                X-Frame-Options is a response header. Developers can use it to protect their site 
+against clickjacking. It can be used to indicate whether or not a browser should be allowed to 
+render a page in an Iframe by have its value set as any of the following:
+
+        X-FRAME-OPTIONS: DENY
+        By specifying DENY, no site will be allowed to load the page in a frame.
+
+        X-FRAME-OPTIONS: SAMEORIGIN
+        On the other hand, if you specify SAMEORIGIN, you can still use the page in a frame as long 
+        as the site including it in a frame is the same as the one serving the page.
+
+        X-FRAME-OPTIONS: ALLOW-FROM uri
+        If you specify this, then the site can be displayed in a frame only by uri specified. 
+        However, this is an obsolete directive that no longer works in modern browsers.
+
+Question-What are some performance metrics for your website?
+
+Answer-
+1. Website Speed
+2. Time to Title
+3. Time to Start Render
+4. Time to Interact
+5. DNS Lookup Speed
+6. Bounce Rate
+7. Requests Per Second
+8. Error Rate
+9. Time to First Byte/Last Byte
+10. Conversion Rate
+
+Question-What does the following term mean?
+                Time to first byte,
+                Page load time
+
+Answer-
+Time to First Byte (TTFB) refers to the time between the browser requesting a page and when it 
+receives the first byte of information from the server. This time includes DNS lookup and 
+establishing the connection using a TCP handshake and SSL handshake if the request is made over 
+https.
+
+Page load time is the time it takes for a page to load, measured from navigation start to the start 
+of the load event.
+
+Question-What do CDN or Content Delivery Networks do? When do you need a CDN?
+
+Answer-
+A content delivery network (CDN) refers to a geographically distributed group of servers which work 
+together to provide fast delivery of Internet content. A CDN allows for the quick transfer of assets 
+needed for loading Internet content including HTML pages, javascript files, stylesheets, images, and 
+videos.
+
+A CDN helps e-commerce sites deliver content quickly and efficiently even during times of heavy 
+traffic, like Black Friday and the holidays. Government. Large, content-heavy websites can deliver 
+vital information to citizens much more quickly and efficiently by using a CDN.
+
+Question-What is the difference between Client Side Renderring and Server Side Renderring?
+
+Answer-
+Client-side rendering manages the routing dynamically without refreshing the page every time a user 
+requests a different route. But server-side rendering is able to display a fully populated page on 
+the first load for any route of the website, whereas client-side rendering displays a blank page 
+first.
+
+In CSR, the initial page load takes longer compared to SSR because it requires more JavaScript to be 
+downloaded and parsed. A second HTTP request needs to be made to load the content then more 
+JavaScript is needed to generate the template.
+
+Question-What is Progressive Renderring?
+
+Answer-
+Progressive Rendering is the technique of sequentially rendering portions of a webpage in the server 
+and streaming it to the client in parts without waiting for the whole page to rendered.
+
+Question-What is the difference between Preloading and Prefetching resources?
+
+Answer-
+Preload is an early fetch instruction to the browser to request a resource needed for a page 
+(key scripts, Web Fonts, hero images). Prefetch serves a slightly different use case — a future 
+navigation by the user (e.g between views or pages) where fetched resources and requests need to 
+persist across navigations.
+
+Question-What are service workers?
+
+Answer-
+A service worker is a type of web worker. It's essentially a JavaScript file that runs separately 
+from the main browser thread, intercepting network requests, caching or retrieving resources from 
+the cache, and delivering push messages.
