@@ -142,3 +142,175 @@ response in some format like JSON, XML and HTML.
 7. Browser displays HTML content
 
 8. Finally, Done.
+
+Question-What is a URLs full form? Explain what a url is and the four parts it consists of The 
+protocol in use The hostname of the server The location of the file The arguments to the file
+
+Answer-
+A URL (Uniform Resource Locator) is a unique identifier used to locate a resource on the Internet. 
+It is also referred to as a web address. URLs consist of multiple parts -- including a protocol and 
+domain name -- that tell a web browser how and where to retrieve a resource.
+
+The four main components of URLs are the protocol, domain, path, and query.
+
+1. A scheme: The scheme identifies the protocol to be used to access the resource on the Internet. 
+It can be HTTP (without SSL) or HTTPS (with SSL).
+
+2. A host: The host name identifies the host that holds the resource. For example, www.example.com. 
+A server provides services in the name of the host, but hosts and servers do not have a one-to-one
+ mapping. Refer to Host names.
+Host names can also be followed by a port number. Refer to Port numbers. Well-known port numbers for 
+a service are normally omitted from the URL. Most servers use the well-known port numbers for HTTP 
+and HTTPS , so most HTTP URLs omit the port number.
+
+A path: The path identifies the specific resource in the host that the web client wants to access. 
+For example, /software/htp/cics/index.html.
+A query string. If a query string is used, it follows the path component, and provides a string of 
+information that the resource can use for some purpose (for example, as parameters for a search or 
+as data to be processed). The query string is usually a string of name and value pairs; for example,
+term=bluebird. Name and value pairs are separated from each other by an ampersand (&); for example, 
+term=bluebird&source=browser-search.
+
+Question-What is HTTP protocol?
+
+Answer-
+HTTP stands for HyperText Transfer Protocol.
+
+It is a protocol used to access the data on the World Wide Web (www).
+
+The HTTP protocol can be used to transfer the data in the form of plain text, hypertext, audio, 
+video, and so on.
+
+This protocol is known as HyperText Transfer Protocol because of its efficiency that allows us to 
+use in a hypertext environment where there are rapid jumps from one document to another document.
+
+HTTP is similar to the FTP as it also transfers the files from one host to another host. But, HTTP 
+is simpler than FTP as HTTP uses only one connection, i.e., no control connection to transfer the 
+files.
+
+HTTP is used to carry the data in the form of MIME-like format.
+
+HTTP is similar to SMTP as the data is transferred between client and server. The HTTP differs from 
+the SMTP in the way the messages are sent from the client to the server and from server to the 
+client. SMTP messages are stored and forwarded while HTTP messages are delivered immediately.
+
+Question-What is TCP Protocol?
+
+Answer-
+TCP stands for Transmission Control Protocol. It is a transport layer protocol that facilitates the 
+transmission of packets from source to destination. It is a connection-oriented protocol that means 
+it establishes the connection prior to the communication that occurs between the computing devices 
+in a network. This protocol is used with an IP protocol, so together, they are referred to as a 
+TCP/IP.
+
+The main functionality of the TCP is to take the data from the application layer. Then it divides the
+data into a several packets, provides numbering to these packets, and finally transmits these 
+packets to the destination. The TCP, on the other side, will reassemble the packets and transmits 
+them to the application layer. As we know that TCP is a connection-oriented protocol, so the 
+connection will remain established until the communication is not completed between the sender and 
+the receiver.
+
+Question-Explain all the different HTTP methods?
+
+Answer-
+For HTTP/1.1, the set of common methods are defined below. This set can be expanded based on the 
+requirements. The name of these methods is case sensitive, and they must be used in uppercase.
+
+Method and Description
+i) GET:
+        This method retrieves information from the given server using a given URI. GET request can retrieve 
+the data. It can not apply other effects on the data.
+ii) HEAD:
+        This method is the same as the GET method. It is used to transfer the status line and header section 
+only.
+iii) POST:
+            The POST request sends the data to the server. For example, file upload, customer information, etc. 
+using the HTML forms.
+iv) PUT:
+        The PUT method is used to replace all the current representations of the target resource with the 
+uploaded content.
+v) DELETE:
+            The DELETE method is used to remove all the current representations of the target resource, which is 
+given by URI.
+vi) CONNECT:
+            This method establishes a tunnel to the server, which is identified by a given URI.
+vii) OPTIONS:
+            This method describes the options of communication for the target resource.
+
+Question-What are HTTP headers?
+
+Answer-
+An HTTP header is a field of an HTTP request or response that passes additional context and metadata 
+about the request or response. For example, a request message can use headers to indicate it's 
+preferred media formats, while a response can use header to indicate the media format of the 
+returned body.
+
+Question-What are some HTTP response codes? what does it mean? 2xx, 3xx, 4xx, 5xx
+
+Answer-
+1. 2xx successful – the request was successfully received, understood, and accepted. 
+
+2. 3xx redirection – further action needs to be taken in order to complete the request. 
+
+3. 4xx client error – the request contains bad syntax or cannot be fulfilled. 
+
+4. 5xx server error – the server failed to fulfil an apparently valid request.
+
+Question-What does cache control on http response mean?
+
+Answer-
+Cache-control is an HTTP header used to specify browser caching policies in both client requests and 
+server responses. Policies include how a resource is cached, where it's cached and its maximum age 
+before expiring (i.e., time to live).
+
+Question-What is polling?
+
+Answer-
+Polling is a technique by which the client asking the server for new data regularly.
+
+Question-What is long polling?
+
+Answer-
+HTTP Long Polling is a technique used to push information to a client as soon as possible on the 
+server. As a result, the server does not have to wait for the client to send a request.
+
+In Long Polling, the server does not close the connection once it receives a request from the client. Instead, the server responds only if any new message is available or if a timeout threshold is reached.
+
+Once the client receives a response, it immediately sends a new request to the server to have a new 
+pending connection to send data to the client, and the operation is repeated. With this approach, 
+the server emulates a Realtime Server Push feature.
+
+Question-What are web sockets?
+
+Answer-
+WebSocket: WebSocket is bidirectional, a full-duplex protocol that is used in the same scenario of 
+client-server communication, unlike HTTP it starts from ws:// or wss://. It is a stateful protocol, 
+which means the connection between client and server will keep alive until it is terminated by 
+either party (client or server). After closing the connection by either of the client and server, 
+the connection is terminated from both ends. 
+
+Question-How is web sockets different from HTTP?
+
+Answer-Unlike HTTP, where you have to constantly request updates, with websockets, updates are sent 
+immediately when they are available. WebSockets keeps a single, persistent connection open while 
+eliminating latency problems that arise with HTTP request/response-based methods.
+
+Question-What is HTTPS?
+
+Answer-
+Hypertext transfer protocol secure (HTTPS) is the secure version of HTTP, which is the primary 
+protocol used to send data between a web browser and a website. HTTPS is encrypted in order to 
+increase security of data transfer. This is particularly important when users transmit sensitive 
+data, such as by logging into a bank account, email service, or health insurance provider.
+
+Any website, especially those that require login credentials, should use HTTPS. In modern web 
+browsers such as Chrome, websites that do not use HTTPS are marked differently than those that are. 
+Look for a green padlock in the URL bar to signify the webpage is secure. Web browsers take HTTPS 
+seriously; Google Chrome and other browsers flag all non-HTTPS websites as not secure.
+
+Question-What is Cross Origin Resource Sharing? ( CORS ) Why do we need it?
+
+Answer-
+Cross-Origin Resource Sharing (CORS) is an HTTP-header based mechanism that allows a server to 
+indicate any origins (domain, scheme, or port) other than its own from which a browser should permit
+loading resources.
