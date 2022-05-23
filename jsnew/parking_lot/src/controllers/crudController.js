@@ -6,6 +6,8 @@ const Post = (model) => async (req, res) => {
       return res.status(500).send({ Error: err.message });
     }
   };
+
+
   const Get = (model) => async (req, res) => {
     try {
       const item = await model.find().lean().exec();
@@ -14,6 +16,8 @@ const Post = (model) => async (req, res) => {
       return res.status(500).send({ Error: err.message });
     }
   };
+
+
   const GetOne = (model) => async (req, res) => {
     try {
       const item = await model.findOne({ user_id: req.params.id }).lean().exec();
@@ -22,6 +26,8 @@ const Post = (model) => async (req, res) => {
       return res.send({ Error: err.message });
     }
   };
+
+
   
   const Delete = (model) => async (req, res) => {
     try {
@@ -31,6 +37,7 @@ const Post = (model) => async (req, res) => {
       return res.status(500).send({ Error: err.message });
     }
   };
+
   
   const Patch = (model) => async (req, res) => {
     try {
@@ -43,6 +50,8 @@ const Post = (model) => async (req, res) => {
       return res.status(500).send({ Error: err.message });
     }
   };
+
+  
   module.exports = (model) => {
     return {
       Post: Post(model),
