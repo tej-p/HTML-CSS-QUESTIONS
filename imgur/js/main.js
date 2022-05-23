@@ -1,4 +1,4 @@
-let data = [
+let cite_data = [
     {
       img_url:
         "https://cdn.pixabay.com/photo/2017/08/30/01/05/milky-way-2695569__340.jpg",
@@ -134,11 +134,11 @@ let data = [
     },
   ];
   let main_div = document.getElementById("tags-div");
-  import { showData1,calldata } from "../js/showdata.js";
+  import { DisplayData1,calldata } from "./DisplayData.js";
   
-  function showData(data) { 
+  function DisplayData(cite_data) { 
       main_div.innerHTML = "";
-      data.forEach((el) => {
+      cite_data.forEach((el) => {
         const divEl = document.createElement("div")
         divEl.classList.add("tags");
         let { title } = el
@@ -158,7 +158,7 @@ let data = [
           main_div.appendChild(divEl)
       })
   }
-  showData(data);
+  DisplayData(cite_data);
    
   let more_tag_div = document.getElementById("more-tag")
   more_tag_div.addEventListener("click", function () {
@@ -179,7 +179,7 @@ let data = [
   export async function datatags(el) { 
     a = arguments[0].path[2].innerText.split("\n")[0]
     count = 2
-    await showData1(1,a)
+    await DisplayData1(1,a)
   }
   
   // input box
@@ -190,9 +190,9 @@ let data = [
   
   right_div.addEventListener("click", function () {
     if (a != undefined) {
-      showData1(count, a);
+      DisplayData1(count, a);
     } else {
-      showData1(count, "all");
+      DisplayData1(count, "all");
     }
     num.innerText = count;
     ++count;
@@ -201,9 +201,9 @@ let data = [
   left_div.addEventListener("click", function () {
     if (count > 1) count = count - 1;
     if (a != undefined) {
-      showData1(count, a);
+      DisplayData1(count, a);
     } else { 
-          showData1(count, "all");
+          DisplayData1(count, "all");
     }
     num.innerText = count;
   });

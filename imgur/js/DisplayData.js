@@ -16,7 +16,7 @@ export async function calldata(n,query) {
     return hits
 }
 let container = document.querySelector(".container");
- export const showData1 = async(n,query) =>{
+ export const DisplayData1 = async(n,query) =>{
     let data = [...await calldata(n,query)];
     container.innerHTML = "";
         data.forEach((el) => {
@@ -41,4 +41,4 @@ let container = document.querySelector(".container");
         })
 
     }
-showData1(1,"all");
+DisplayData1(1,"all");
