@@ -1,0 +1,168 @@
+Question ~ Explain in brief what is node js?
+Answer ~ 
+
+
+
+
+Question ~ How is node js non-blocking?
+Answer ~ 
+
+
+
+
+Question ~ What is throughput?
+Answer ~ 
+
+
+
+
+Question ~ How is Node js having high IO throughput?
+Answer ~ 
+
+
+
+
+Question ~ What are CPU intensive tasks?
+Answer ~ 
+
+
+
+
+Question ~ How can you end up blocking your main thread in node.js?
+Answer ~ 
+
+
+
+
+Question ~ What is the event loop?
+Answer ~ 
+
+
+
+
+Question ~ What are different phases in event loop?
+Answer ~ 
+
+
+
+
+Question ~ What is process.tick?
+Answer ~ 
+
+
+
+
+Question ~ When can process.tick starve your event loop?
+Answer ~ 
+
+
+
+
+Question ~ What is the difference between setTimeout and setInterval?
+Answer ~ 
+
+
+
+
+Question ~ How can you make a network request with http module from the backend?
+Answer ~ 
+
+
+
+
+Question ~ How can you create your own events?
+Answer ~ 
+
+
+
+
+Question ~ What are clusters?
+Answer ~ 
+
+
+
+
+Question ~ How does your Node.js application handle scale? Elaborate
+Answer ~ 
+
+
+
+
+Question ~ What is the difference between readFile and readFileSync?
+Answer ~ 
+
+
+
+
+Question ~ What are CORS? How do you configure them? Why do you need them?
+Answer ~ 
+
+
+
+
+Question ~ What is rate limiting?
+Answer ~ 
+
+
+
+
+Question ~ How does middlewares work in express?
+Answer ~ 
+
+
+
+
+Question ~ What is the difference between Encryption and Hashing?
+Answer ~ 
+
+
+
+
+Question ~ What is the difference between https and http?
+Answer ~ 
+
+
+
+
+Question ~ What is TLS?
+Answer ~ 
+
+
+
+
+Question ~ What is AES?
+Answer ~ 
+
+
+
+
+Question ~ What is JWT Token? Why do we need to use JWT? 
+Answer ~ 
+
+
+
+Question ~ What are some pros and cons?
+Answer ~ 
+
+
+
+
+Question ~ What is salting? Where do we store salt?
+Answer ~ 
+
+
+
+
+Question ~ What is the difference between authorisation and Authentication?
+Answer ~ 
+
+
+
+
+Question ~ What is the difference between JS on the browser and node?
+Answer ~ 
+
+
+
+
+Question ~ What is V8?Answer ~ 

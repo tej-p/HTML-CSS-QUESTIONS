@@ -85,86 +85,275 @@ the most recent updates because it takes time for updates to reach replicas acro
 
 Question ~ What is Strong Consistency?
 Answer ~ 
+Strong Consistency simply means the data must be strongly consistent at all times. All the server nodes 
+across the world should contain the same value as an entity at any point in time. And the only way to 
+implement this behavior is by locking down the nodes when being updated.
+(https://www.geeksforgeeks.org/eventual-vs-strong-consistency-in-distributed-databases/)
 
 
 
 
 Question ~ What are the different types of databases?
 Answer ~ 
+1. Hierarchical databases
+    Just as in any hierarchy, this database follows the progression of data being categorized in ranks or 
+    levels, wherein data is categorized based on a common point of linkage. As a result, two entities of 
+    data will be lower in rank and the commonality would assume a higher rank.
+
+2. Network databases
+    In Layman’s terms, a network database is a hierarchical database, but with a major tweak. The child records 
+    are given the freedom to associate with multiple parent records. As a result, a network or net of database 
+    files linked with multiple threads is observed.
+
+3. Object-oriented databases
+    Those familiar with the Object-Oriented Programming Paradigm would be able to relate to this model of databases 
+    easily. Information stored in a database is capable of being represented as an object which response as an 
+    instance of the database model. Therefore, the object can be referenced and called without any difficulty. 
+    As a result, the workload on the database is substantially reduced. 
+
+4. Relational databases
+    Considered the most mature of all databases, these databases lead in the production line along with their 
+    management systems. In this database, every piece of information has a relationship with every other piece 
+    of information. This is on account of every data value in the database having a unique identity in the form 
+    of a record. 
+
+5. NoSQL databases
+    A NoSQL originally referring to non SQL or non-relational is a database that provides a mechanism for 
+    storage and retrieval of data. This data is modeled in means other than the tabular relations used in 
+    relational databases. 
+(https://www.geeksforgeeks.org/types-of-databases/)
 
 
 
 
 Question ~ What are message queues?
 Answer ~ 
+A message queue is a form of asynchronous service-to-service communication used in serverless and microservices 
+architectures. Messages are stored on the queue until they are processed and deleted. Each message is processed 
+only once, by a single consumer. Message queues can be used to decouple heavyweight processing, to buffer or 
+batch work, and to smooth spiky workloads.
+(https://aws.amazon.com/message-queue/)
+
 
 
 
 
 Question ~ Which service by Amazon Web Services (AWS) can you use for Queues?
 Answer ~ 
+'Amazon Simple Queue Service (SQS)' is a fully managed message queuing service that enables you to decouple 
+and scale microservices, distributed systems, and serverless applications.
 
 
 
 
 Question ~ What is Pub Sub ?
 Answer ~ 
+Pub/Sub allows services to communicate asynchronously, with latencies on the order of 100 milliseconds.
+
+Pub/Sub is used for streaming analytics and data integration pipelines to ingest and distribute data. It 
+is equally effective as a messaging- oriented middleware for service integration or as a queue to parallelize tasks.
+
+Pub/Sub enables you to create systems of event producers and consumers, called publishers and subscribers. 
+Publishers communicate with subscribers asynchronously by broadcasting events, rather than by synchronous 
+remote procedure calls (RPCs).
+
+Publishers send events to the Pub/Sub service, without regard to how or when these events are to be processed. 
+Pub/Sub then delivers events to all services that need to react to them. Compared to systems communicating 
+through RPCs, where publishers must wait for subscribers to receive the data, such asynchronous integration 
+increases the flexibility and robustness of the overall system.
+
+To get started with Pub/Sub, check out the Quickstart using Cloud console. For a more comprehensive 
+introduction, see Building a Pub/Sub messaging system.
+(https://cloud.google.com/pubsub/docs/overview)
+(https://aws.amazon.com/pub-sub-messaging/)
 
 
 
 
 Question ~ What are webhooks?
 Answer ~ 
+Webhooks are one way that apps can send automated messages or information to other apps. It's how PayPal 
+tells your accounting app when your clients pay you, how Twilio routes phone calls to your number, and how 
+WooCommerce can notify you about new orders in Slack.
+
+They're a simple way your online accounts can "speak" to each other and get notified automatically 
+when something new happens. In many cases, you'll need to know how to use webhooks if you want to 
+automatically push data from one app to another.
+(https://zapier.com/blog/what-are-webhooks/)
+
+(A webhook is an HTTP request, triggered by an event in a source system and sent to a destination system, 
+often with a payload of data. Webhooks are automated, in other words they are automatically sent out when 
+their event is fired in the source system.
+
+This provides a way for one system (the source) to "speak" (HTTP request) to another system (the destination) 
+when an event occurs, and share information (request payload) about the event that occurred.)
+(https://hookdeck.com/webhooks/guides/what-are-webhooks-how-they-work#what-is-a-webhook)
 
 
 
 
 Question ~ What is Docker? Why do we use it?
 Answer ~ 
+Docker is an open source containerization platform. It enables developers to package applications into 
+containers—standardized executable components combining application source code with the operating system (OS) 
+libraries and dependencies required to run that code in any environment.
+
+Docker is an open platform for developing, shipping, and running applications. Docker enables you to 
+separate your applications from your infrastructure so you can deliver software quickly. With Docker, 
+you can manage your infrastructure in the same ways you manage your applications. By taking advantage 
+of Docker’s methodologies for shipping, testing, and deploying code quickly, you can significantly reduce 
+the delay between writing code and running it in production.
+(https://docs.docker.com/get-started/overview/)
 
 
 
 
 Question ~ What is S3 Service in AWS?
 Answer ~ 
+Amazon Simple Storage Service (Amazon S3) is an object storage service that offers industry-leading 
+scalability, data availability, security, and performance. Customers of all sizes and industries can 
+use Amazon S3 to store and protect any amount of data for a range of use cases, such as data lakes, 
+websites, mobile applications, backup and restore, archive, enterprise applications, IoT devices, 
+and big data analytics. Amazon S3 provides management features so that you can optimize, organize, 
+and configure access to your data to meet your specific business, organizational, and compliance requirements.
+(https://docs.aws.amazon.com/AmazonS3/latest/userguide/Welcome.html)
 
 
 
 
 Question ~ What is EC2 Instance in AWS?
 Answer ~ 
+Amazon Elastic Compute Cloud (Amazon EC2) provides scalable computing capacity in the Amazon Web 
+Services (AWS) Cloud. Using Amazon EC2 eliminates your need to invest in hardware up front, so you 
+can develop and deploy applications faster. You can use Amazon EC2 to launch as many or as few virtual 
+servers as you need, configure security and networking, and manage storage. Amazon EC2 enables you to 
+scale up or down to handle changes in requirements or spikes in popularity, reducing your need to forecast traffic.
+(https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/concepts.html)
+
 
 
 
 
 Question ~ What is Cloudfront in AWS?
 Answer ~ 
+Amazon CloudFront is a web service that speeds up distribution of your static and dynamic web content, 
+such as .html, .css, .js, and image files, to your users. CloudFront delivers your content through a 
+worldwide network of data centers called edge locations. When a user requests content that you're serving 
+with CloudFront, the request is routed to the edge location that provides the lowest latency (time delay), 
+so that content is delivered with the best possible performance.
+(https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/Introduction.html)
 
 
 
 
 Question ~ What is Route 53 In AWS?
 Answer ~ 
+Amazon Route 53 is a highly available and scalable cloud Domain Name System (DNS) web service. It is designed 
+to give developers and businesses an extremely reliable and cost effective way to route end users to 
+Internet applications by translating names like www.example.com into the numeric IP addresses like 192.0.2.1 
+that computers use to connect to each other. Amazon Route 53 is fully compliant with IPv6 as well.
+
+Amazon Route 53 effectively connects user requests to infrastructure running in AWS – such as Amazon 
+EC2 instances, Elastic Load Balancing load balancers, or Amazon S3 buckets – and can also be used to 
+route users to infrastructure outside of AWS. You can use Amazon Route 53 to configure DNS health checks, 
+then continuously monitor your applications’ ability to recover from failures and control application 
+recovery with Route 53 Application Recovery Controller.
+
+Amazon Route 53 Traffic Flow makes it easy for you to manage traffic globally through a variety of routing 
+types, including Latency Based Routing, Geo DNS, Geoproximity, and Weighted Round Robin—all of which can be 
+combined with DNS Failover in order to enable a variety of low-latency, fault-tolerant architectures.
+(https://aws.amazon.com/route53/)
 
 
 
 
 Question ~ What are ELBs in AWS?
 Answer ~ 
+Elastic Load Balancing automatically distributes your incoming traffic across multiple targets, such as EC2 
+instances, containers, and IP addresses, in one or more Availability Zones. It monitors the health of its 
+registered targets, and routes traffic only to the healthy targets. Elastic Load Balancing scales your load 
+balancer capacity automatically in response to changes in incoming traffic.
+
+LOAD BALANCER BENEFITS : 
+A load balancer distributes workloads across multiple compute resources, such as virtual servers. Using a 
+load balancer increases the availability and fault tolerance of your applications.
+
+You can add and remove compute resources from your load balancer as your needs change, without disrupting 
+the overall flow of requests to your applications.
+
+You can configure health checks, which monitor the health of the compute resources, so that the load balancer 
+sends requests only to the healthy ones. You can also offload the work of encryption and decryption to your 
+load balancer so that your compute resources can focus on their main work.
+(https://docs.aws.amazon.com/elasticloadbalancing/latest/userguide/what-is-load-balancing.html)
 
 
 
 
 Question ~ What is TLS?
 Answer ~ 
+Transport Layer Securities (TLS) are designed to provide security at the transport layer. TLS was derived from a 
+security protocol called Secure Socket Layer (SSL). TLS ensures that no third party may eavesdrop or tampers 
+with any message. 
+
+There are several benefits of TLS: 
+    - Encryption: 
+        TLS/SSL can help to secure transmitted data using encryption.
+
+    - Interoperability: 
+        TLS/SSL works with most web browsers, including Microsoft Internet Explorer and on most operating 
+        systems and web servers.
+
+    - Algorithm flexibility: 
+        TLS/SSL provides operations for authentication mechanism, encryption algorithms and hashing algorithm 
+        that are used during the secure session.
+
+    - Ease of Deployment: 
+        Many applications TLS/SSL temporarily on a windows server 2003 operating systems.
+
+    - Ease of Use: 
+        Because we implement TLS/SSL beneath the application layer, most of its operations are completely invisible
+        to client. 
+(https://www.geeksforgeeks.org/transport-layer-security-tls/)
 
 
 
 
-Question ~ What is t
+Question ~ What is the difference HTTPS vs HTTP?
 Answer ~ 
+In address bar of a browser, have you noticed either http:// or https:// at the time of browsing a website? If 
+neither of these are present then most likely, it’s http:// Let’s find out the difference…
 
-he difference HTTPS vs HTTP?
+In short, both of these are protocols using which the information of a particular website is exchanged between
+Web Server and Web Browser. But what’s difference between these two? Well, extra s is present in https and 
+that makes it secure! A very short and concise difference between http and https is that 
+https is much more secure compared to http.
+
+HTTPS is HTTP with encryption. The only difference between the two protocols is that HTTPS uses TLS (SSL) to 
+encrypt normal HTTP requests and responses. As a result, HTTPS is far more secure than HTTP.
+
+Differences between HTTP and HTTPS: 
+- In HTTP, URL begins with “http://” whereas URL starts with “https://”
+- HTTP uses port number 80 for communication and HTTPS uses 443
+- HTTP is considered to be unsecure and HTTPS is secure
+- HTTP Works at Application Layer and HTTPS works at Transport Layer
+- In HTTP, Encryption is absent and Encryption is present in HTTPS as discussed above
+- HTTP does not require any certificates and HTTPS needs SSL Certificates
+(https://www.geeksforgeeks.org/difference-between-http-and-https/)
 
 
-Question ~ What is a reverse proxy?Answer ~ 
+
+
+
+Question ~ What is a reverse proxy?
+Answer ~ 
+A proxy server is a go‑between or intermediary server that forwards requests for content from multiple clients 
+to different servers across the Internet. A reverse proxy server is a type of proxy server that typically sits 
+behind the firewall in a private network and directs client requests to the appropriate backend server. A reverse 
+proxy provides an additional level of abstraction and control to ensure the smooth flow of network traffic between 
+clients and servers.
+(https://www.nginx.com/resources/glossary/reverse-proxy-server/)
+
+A reverse proxy is a server that sits in front of web servers and forwards client (e.g. web browser) requests 
+to those web servers. Reverse proxies are typically implemented to help increase security, performance, and 
+reliability.
+(https://www.cloudflare.com/en-in/learning/cdn/glossary/reverse-proxy/)
