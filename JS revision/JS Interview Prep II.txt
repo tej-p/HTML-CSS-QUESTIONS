@@ -1,0 +1,81 @@
+Question-Give an example where call apply bind is. required?
+
+Answer-
+The call() and apply() are very similar methods. They both execute the bound function on the object 
+immediately. The bind() method does not execute the function right away. Instead, it creates and 
+returns a bound function that can be executed later.
+
+Question-What is the difference between readFile and readFileSync?
+
+Answer-
+readFileSync() is synchronous and blocks execution until finished. These return their results as 
+return values. readFile() are asynchronous and return immediately while they function in the 
+background. You pass a callback function which gets called when they finish.
+
+Question-What does process in node.js mean?
+
+Answer-
+Node. js provides the facility to get process information such as process id, architecture, platform
+version, release, uptime, upu usage etc. It can also be used to kill process, set uid, set groups, 
+unmask etc. The process is a global object, an instance of EventEmitter, can be accessed from 
+anywhere.
+
+Question-Explain what node.js is?
+
+Answer-
+Node. js (Node) is an open source development platform for executing JavaScript code server-side. 
+Node is useful for developing applications that require a persistent connection from the browser to 
+the server and is often used for real-time applications such as chat, news feeds and web push 
+notifications. Node.
+
+Question-What is the difference of JS from browser to JS on node.js?
+
+Answer-
+Unlike the browser where Javascript is sandboxed for your safety, node. js has full access to the 
+system like any other native application. This means you can read and write directly to/from the 
+file system, have unrestricted access to the network, can execute software and more.
+
+Question-Write three different ways to reverse a string in Javascript? a. using inbuilt method, b. 
+iteratively, c. recursively
+
+Answer-
+1. Reverse a String With Built-In Functions
+For this solution, we will use three methods: the String.prototype.split() method, the 
+Array.prototype.reverse() method and the Array.prototype.join() method.
+
+    The split() method splits a String object into an array of string by separating the string into 
+    sub strings.
+
+    The reverse() method reverses an array in place. The first array element becomes the last and 
+    the last becomes the first.
+
+    The join() method joins all elements of an array into a string.
+
+2. Reverse a String With a Decrementing For Loop
+    function reverseString(str) {
+    var newString = "";
+    for (var i = str.length - 1; i >= 0; i--) {
+        newString += str[i];
+    }
+    return newString;
+}
+reverseString('hello');
+
+3. Reverse a String With Recursion
+For this solution, we will use two methods: the String.prototype.substr() method and the 
+String.prototype.charAt() method.
+
+    The substr() method returns the characters in a string beginning at the specified location 
+    through the specified number of characters.
+
+    The charAt() method returns the specified character from a string.
+
+The depth of the recursion is equal to the length of the String. This solution is not the best one 
+and will be really slow if the String is very long and the stack size is of major concern.
+
+Question-What is shallow equal?
+
+Answer-
+A function for performing a shallow comparison between two objects or arrays. Two values have 
+shallow equality when all of their members are strictly equal to the corresponding member of the 
+other.
