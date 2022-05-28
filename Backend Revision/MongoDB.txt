@@ -1,0 +1,191 @@
+Question ~ What are SQL Databases? What are some companies that use Mongo, what type of applications are these?
+Answer ~
+
+
+
+
+
+Question ~ What are NoSQL Databases? What are some companies that use Mongo, what type of applications are these?
+Answer ~
+
+
+
+
+
+Question ~ What is the difference between SQL and NoSQL databases?
+Answer ~
+
+
+
+
+
+Question ~ What are some features of MongoDB?
+Answer ~
+
+
+
+
+
+Question ~ What are aggregate queries?
+Answer ~
+
+
+
+
+
+Question ~ What are pipelines in aggregation?
+Answer ~
+
+
+
+
+
+Question ~ How do you do aggregate queries?
+Answer ~
+
+
+
+
+
+Question ~ How can you group by a particular value in MongoDB?
+Answer ~
+
+
+
+
+
+Question ~ How can you paginate on MongoDB?
+Answer ~
+
+
+
+
+
+Question ~ How can you sort in MongoDB?
+Answer ~
+
+
+
+
+
+Question ~ What is indexing in MongoDB? Why do we need to use indexing? What are pros and cons for indexing?
+Answer ~
+
+
+
+
+
+Question ~ Write the query for indexing a field in MongoDB?
+Answer ~
+
+
+
+
+
+Question ~ What is the improvement in performance in MongoDB?
+Answer ~
+
+
+
+
+
+Question ~ What is the data structure used for indexing?
+Answer ~
+
+
+
+
+
+Question ~ Are values sorted in indexes?
+Answer ~
+
+
+
+
+
+Question ~ What are Replica Sets in MongoDB?
+Answer ~
+
+
+
+
+
+Question ~ Explain the structure of ObjectID in MongoDB.
+Answer ~
+
+
+
+
+
+Question ~ By default, which index is created by MongoDB for every collection?
+Answer ~
+
+
+
+
+
+Question ~ In which format MongoDB represents document structure?
+Answer ~
+
+
+
+
+
+Question ~ What is the limitation of a document in MongoDB?
+Answer ~
+
+
+
+
+
+Question ~ What is the difference between MongoDB and Redis database?
+Answer ~
+
+
+
+
+
+Question ~ How can you add references between multiple collections?
+Answer ~
+
+
+
+
+
+Question ~ What are lookup in aggregation for MongoDB?
+Answer ~
+
+
+
+
+
+Question ~ What are graph lookups?
+Answer ~
+
+
+
+
+
+Question ~ What is the alternative for lookups for SQL?
+Answer ~
+
+
+
+
+
+Question ~ How can you do one to many relation in MongoDB?
+Answer ~
+
+
+
+
+
+Question ~ How can you do many to many relation in MongoDB?
+Answer ~
+
+
+
+
+
+Question ~ How can you do one to zillion relation in MongoDB?
+Answer ~
