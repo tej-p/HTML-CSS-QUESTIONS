@@ -18,54 +18,207 @@ languages for server-side and client-side scripts.
 
 Question ~ How is node js non-blocking?
 Answer ~ 
+Blocking is when the execution of additional JavaScript in the Node.js process must wait until a non-JavaScript 
+operation completes. This happens because the event loop is unable to continue running JavaScript while a 
+blocking operation is occurring.
 
+In Node.js, JavaScript that exhibits poor performance due to being CPU intensive rather than waiting on a 
+non-JavaScript operation, such as I/O, isn't typically referred to as blocking. Synchronous methods in the 
+Node.js standard library that use libuv are the most commonly used blocking operations. Native modules may 
+also have blocking methods.
+
+All of the I/O methods in the Node.js standard library provide asynchronous versions, which are non-blocking, 
+and accept callback functions. Some methods also have blocking counterparts, which have names that end with Sync.
+(https://nodejs.org/en/docs/guides/blocking-vs-non-blocking/)
+
+
+Non-Blocking:   It refers to the program that does not block the execution of further operations. 
+                Non-Blocking methods are executed asynchronously. Asynchronously means that the program may not 
+                necessarily execute line by line. The program calls the function and move to the next operation 
+                and does not wait for it to return.
 
 
 
 Question ~ What is throughput?
 Answer ~ 
+In communication networks, network throughput (or just throughput, when in context) is the rate of successful 
+message delivery over a communication channel, such as Ethernet or packet radio. The data these messages belong 
+to may be delivered over a physical or logical link, or it can pass through a certain network node. Throughput 
+is usually measured in bits per second (bit/s or bps), and sometimes in data packets per second (p/s or pps) 
+or data packets per time slot.
+(https://en.wikipedia.org/wiki/Network_throughput)
 
 
 
 
 Question ~ How is Node js having high IO throughput?
 Answer ~ 
+In its most basic form Node. js is best suited for this type of computing. All I/O in Node. js is non-blocking 
+and it allows other requests to be served while waiting for a particular read or write to complete.
+
+Node.js is asynchronous and single-threaded. This means that all I/O operations don’t block any other operations. 
+It also means that you can send emails, read files, query the database, etc. all at the same time.
+
+Each request to the web-server won’t create a separate Node.js process. Although, one Node.js process would run at 
+all times which would listen to the connections. JavaScript code is also executed in the process’ main thread while 
+all other I/O operations are executed in separate threads which results in almost no delays.
+
+The virtual machine in Node.js (V8) which is responsible for executing JavaScript consists of a JIT compilation. 
+The virtual machine can take the source code to compile it into the machine code at runtime. What it means is 
+that all the “hot” functions that get called often than not can be compiled to the machine code thus boosting 
+the execution speed.
+(https://www.peerbits.com/blog/why-nodejs-fast-and-its-best-use-cases.html)
 
 
 
 
 Question ~ What are CPU intensive tasks?
 Answer ~ 
+They are complex user actions that eat up more RAM. A few of such processes can shut down your server entirely. 
+Naturally, you want to make sure that your app or website is 'smart' enough to handle different kinds of tasks, 
+for each individual user request.
+
+Examples : 
+Sorting, search, graph traversal, matrix multiply are all CPU operations, a process is CPU-intensive 
+or not it depends on how much and how frequent are their execution.
 
 
 
 
 Question ~ How can you end up blocking your main thread in node.js?
 Answer ~ 
+Node.js runs JavaScript code in the Event Loop (initialization and callbacks), and offers a Worker Pool to handle 
+expensive tasks like file I/O. Node.js scales well, sometimes better than more heavyweight approaches like Apache. 
+The secret to the scalability of Node.js is that it uses a small number of threads to handle many clients. If 
+Node.js can make do with fewer threads, then it can spend more of your system's time and memory working on 
+clients rather than on paying space and time overheads for threads (memory, context-switching). But because 
+Node.js has only a few threads, you must structure your application to use them wisely.
+(https://nodejs.org/en/docs/guides/dont-block-the-event-loop/)
+
+(Blocking is when the execution of additional JavaScript in the Node.js process must wait until a non-JavaScript 
+operation completes. This happens because the event loop is unable to continue running JavaScript while a 
+blocking operation is occurring.
+
+In Node.js, JavaScript that exhibits poor performance due to being CPU intensive rather than waiting on a 
+non-JavaScript operation, such as I/O, isn't typically referred to as blocking. Synchronous methods in the 
+Node.js standard library that use libuv are the most commonly used blocking operations. Native modules may 
+also have blocking methods.)(https://nodejs.org/en/docs/guides/blocking-vs-non-blocking/)
 
 
 
 
 Question ~ What is the event loop?
 Answer ~ 
+JavaScript is a single-threaded synchronous programming language. But what does it actually mean? What is this 
+event loop in JavaScript that we all keep talking about? 
+
+What does it actually mean when we say JavaScript is single threaded?
+It means that the main thread where JavaScript code is run, runs in one line at a time manner and there is no 
+possibility of running code in parallel.
+
+Function call stack: 
+The function stack is a function which keeps track of all other functions executed in run time. Ever seen a 
+stack trace being printed when you ran into an error in JavaScript.
+
+An event loop is something that pulls stuff out of the queue and places it onto the function execution stack 
+whenever the function stack becomes empty.
+
+The event loop is the secret by which JavaScript gives us an illusion of being multithreaded even though it is 
+single-threaded.
+(https://www.geeksforgeeks.org/what-is-an-event-loop-in-javascript/)
+
+
 
 
 
 
 Question ~ What are different phases in event loop?
 Answer ~ 
+The event loop is a mechanism in Node.js which iterates over a series of phases in loop. Following are the phases 
+that the event loop iterates through. Each of the phases has a queue/heap which is used by the event loop 
+to push/store the callbacks to be executed (There is a misconception in Node.js that there is only a single 
+global queue where the callbacks are queued for execution which is not true.).
+
+1. Timers:
+    The callbacks of timers in JavaScript(setTimeout, setInterval) are kept in the heap memory until they are expired. 
+    If there are any expired timers in the heap, the event loop takes the callbacks associated with them and starts 
+    executing them in the ascending order of their delay until the timers queue is empty. However, the execution of 
+    the timer callbacks is controlled by the Poll phase of the event loop (we will see that later in this article).
+
+2. Pending callbacks:
+    In this phase, the event loop executes system-related callbacks if any. For example, let's say you are writing 
+    a node server and the port on which you want to run the process is being used by some other process, node will 
+    throw an error ECONNREFUSED, some of the *nix systems may want the callback to wait for execution due to some 
+    other tasks that the operating system is processing. Hence, such callbacks are pushed to the pending callbacks 
+    queue for execution.
+
+3. Idle/Prepare: 
+    In this phase, the event loop does nothing. It is idle and prepares to go to the next phase.
+
+4. Poll:
+    This phase is the one which makes Node.js unique. In this phase, the event loop watches out for new async I/O 
+    callbacks. Nearly all the callbacks except the setTimeout, setInterval, setImmediate and closing callbacks are executed.
+
+    Basically, the event loop does two things in this phase:
+
+    a.  If there are already callbacks queued up in the poll phase queue, it will execute them until all the callbacks 
+        are drained up from the poll phase callback queue.
+    b.  If there are no callbacks in the queue, the event loop will stay in the poll phase for some time. Now, 
+        this 'some time' also depends on a few things:
+            I.  If there are any callbacks present in the setImmediate queue to be executed, event loop won't stay for a much 
+                longer time in the poll phase and will move to the next phase i.e Check/setImmediate. Again, it will start executing 
+                the callbacks until the Check/setImmediate phase callback queue is empty.
+            II. The second case when the event loop will move from the poll phase is when it gets to know that there are 
+                expired timers, the callback of which are waiting to be executed. In such a case, the event loop will move to 
+                the next phase i.e Check/setImmediate and then to the Closing callbacks phase and will eventually start its next 
+                iteration from the timers phase.
+
+5. Check/setImmediate: 
+    In this phase, the event loop takes the callbacks from the Check phase's queue and starts 
+    executing one by one until the queue is empty. The event loop will come to this phase when there are no 
+    callbacks remaining to be executed in the poll phase and when the poll phase becomes idle. Generally, the 
+    callbacks of setImmediate are executed in this phase.
+
+6. Closing callbacks: 
+    In this phase, the event loop executes the callbacks associated with the closing events 
+    like socket.on('close', fn) or process.exit().
+(https://dev.to/lunaticmonk/understanding-the-node-js-event-loop-phases-and-how-it-executes-the-javascript-code-1j9)
+(https://javascript.plainenglish.io/node-js-event-loop-explained-d27647ec8d53)
 
 
 
 
 Question ~ What is process.tick?
 Answer ~ 
+As you try to understand the Node.js event loop, one important part of it is process.nextTick().
+Every time the event loop takes a full trip, we call it a tick.
+When we pass a function to process.nextTick(), we instruct the engine to invoke this function at the end of 
+the current operation, before the next event loop tick starts:
+
+Example: 
+        process.nextTick(() => {
+            // do something
+        });
+
+The event loop is busy processing the current function code.
+When this operation ends, the JS engine runs all the functions passed to nextTick calls during that operation.
+It's the way we can tell the JS engine to process a function asynchronously (after the current function), 
+but as soon as possible, not queue it.
+(https://nodejs.dev/learn/understanding-process-nexttick)
 
 
 
 
 Question ~ When can process.tick starve your event loop?
 Answer ~ 
+Before each phase of the event loop (timers queue, IO events queue, immediates queue, close handlers queue 
+are the four main phases), before moving to the phase, Node checks for the nextTick queue for any queued events. 
+If the queue is not empty, Node will start processing the queue immediately until the queue is empty, before 
+moving to the main event loop phase.
+
+Recursively/Repeatedly adding events to the nextTick queue using process.nextTick function can cause I/O
+and other queues to starve forever.
+(https://blog.insiderattack.net/timers-immediates-and-process-nexttick-nodejs-event-loop-part-2-2c53fd511bb3)
 
 
 
