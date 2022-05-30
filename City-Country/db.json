@@ -1,0 +1,71 @@
+{
+    "countries":[
+        {
+            "id":1,
+            "name":"India"
+        },
+        {
+            "id":2,
+            "name":"Bangladesh"
+        },
+        {
+            "id":3,
+            "name":"Germany"
+        },
+        {
+            "id":4,
+            "name":"Japan"
+        }
+    ],
+    "cities":[
+        {
+            "id":11,
+            "city":"Mumbai",
+            "country":"India",
+            "population":20185064
+        },
+        {
+            "id":12,
+            "city":"Dhaka",
+            "country": "Bangladesh",
+            "population":20283552
+        },
+        {
+            "id":13,
+            "city":"Tokyo",
+            "country":"Japan",
+            "population":37435191
+        },
+        {
+            "id":14,
+            "city":"Osaka",
+            "country":"Japan",
+            "population":19222665
+        },
+        {
+            "id":15,
+            "city":"Delhi",
+            "country": "India",
+            "population":29399141
+        },
+        {
+            "id":16,
+            "city":"Berlin",
+            "country": "Germany",
+            "population":3570750
+        },
+        {
+            "id":17,
+            "city":"Chittagong",
+            "country": "Bangladesh",
+            "population":5252842
+        },
+        {
+            "id":18,
+            "city":"Munich",
+            "country":"Germany",
+            "population":1566128
+        }
+    ]
+    
+}
