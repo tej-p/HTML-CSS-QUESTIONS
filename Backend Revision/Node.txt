@@ -223,26 +223,99 @@ and other queues to starve forever.
 
 
 
+
 Question ~ What is the difference between setTimeout and setInterval?
 Answer ~ 
+setTimeout  : allows us to run a function once after the interval of time.
+setInterval : allows us to run a function repeatedly, starting after the interval of time, then repeating 
+              continuously at that interval.
+
 
 
 
 
 Question ~ How can you make a network request with http module from the backend?
 Answer ~ 
+Various open-source library including NodeJS built in HTTP and HTTPS modules can be used to make network 
+request from NodeJS.
+
+There are many approaches to create different kinds of network requests. 
+
+- Using AXIOS module
+- Using SuperAgent
+- Using Node-Fetch module
+- Using HTTP module
+(https://www.geeksforgeeks.org/how-to-make-http-requests-in-node-js/)
 
 
 
 
 Question ~ How can you create your own events?
 Answer ~ 
+To create a custom event we use the Event constructor or CustomEvent interface. The Event constructor creates 
+an Event and CustomEvent creates an Event with more functionality.
+
+The below steps are followed in order to create one using a new Event.
+    - We create an event using the Event constructor.
+    - We listen to this event using the addEventListener() method.
+    - We trigger or dispatch the event using element.dispatchEvent(eventName) method.
+    - A custom Event named start has now been created.
+
+Creating a custom event using CustomEvent: 
+Creating custom events using the CustomEvent interface has an advantage as it can send custom data. The below 
+steps are followed in order to create a new CustomEvent.
+    - We create a custom event using the CustomEvent constructor.
+    - This takes two arguments, the first is the name of the event and the second is an object that contains the data. 
+      The property name inside the object name should be named detail otherwise it won’t work.
+    - We create a listener for this event.
+    - We trigger or dispatch the event.
+    - A custom event that contains data has been created.
+(https://www.geeksforgeeks.org/javascript-custom-events/)
+
 
 
 
 
 Question ~ What are clusters?
 Answer ~ 
+Multiple computing nodes or hosts that work together to support an application or middleware such as a database. 
+A cluster is a group of inter-connected computers or hosts that work together to support applications and middleware 
+(e.g. databases).  In a cluster, each computer is referred to as a “node”. Unlike grid computers, where each node 
+performs a different task, computer clusters assign the same task to each node. Nodes in a cluster are usually 
+connected to each other through high-speed local area networks. Each node runs its own instance of an operating 
+system. A computer cluster may range from a simple two-node system connecting two personal computers to a 
+supercomputer with a cluster architecture. Computer clusters are often used for cost-effective high-performance 
+computing (HPC) and high availability (HA). If a single component fails in a computer cluster, the other nodes 
+continue to provide uninterrupted processing.  A computer cluster can provide faster processing speed, larger 
+storage capacity, better data integrity, greater reliability and wider availability of resources. Computer 
+clusters are usually dedicated to specific functions, such as load balancing, high availability, high performance 
+or large-scale processing.
+(https://www.virtana.com/glossary/what-is-a-cluster/)
+
+
+1) In a computer system, a cluster is a group of servers and other resources that act like a single system and enable
+   high availability and, in some cases, load balancing and parallel processing. See clustering.
+
+2) In personal computer storage technology, a cluster is the logical unit of file storage on a hard disk; it's managed
+   by the computer's operating system. Any file stored on a hard disk takes up one or more clusters of storage. A 
+   file's clusters can be scattered among different locations on the hard disk. The clusters associated with a file 
+   are kept track of in the hard disk's file allocation table (FAT). When you read a file, the entire file is obtained 
+   for you and you aren't aware of the clusters it is stored in.
+
+   Since a cluster is a logical rather than a physical unit (it's not built into the hard disk itself), the size of 
+   a cluster can be varied. The maximum number of clusters on a hard disk depends on the size of a FAT table entry. 
+   Beginning with DOS 4.0, the FAT entries were 16 bits in length, allowing for a maximum of 65,536 clusters. 
+   Beginnning with the Windows 95 OSR2 service release, a 32-bit FAT entry is supported, allowing an entry to 
+   address enough clusters to support up to two terabytes of data (assuming the hard disk is that large!).
+
+   The tradeoff in cluster size is that even the smallest file (and even a directory itself) takes up the entire 
+   cluster. Thus, a 10-byte file will take up 2,048 bytes if that's the cluster size. In fact, many operating 
+   systems set the cluster size default at 4,096 or 8,192 bytes. Until the file allocation table support in Windows 
+   95 OSR2, the largest size hard disk that could be supported in a single partition was 512 megabytes. Larger 
+   hard disks could be divided into up to four partitions, each with a FAT capable of supporting 512 megabytes of clusters.
+
+3) In some products, a cluster is a group of terminals or workstations attached to a common control unit.
+(https://www.techtarget.com/whatis/definition/cluster)
 
 
 
