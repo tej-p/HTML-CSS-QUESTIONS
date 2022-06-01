@@ -328,79 +328,192 @@ Answer ~
 
 Question ~ What is the difference between readFile and readFileSync?
 Answer ~ 
+The workload is the most popular reason we scale our applications, but it’s not the only reason. We also scale our 
+applications to increase their availability and tolerance to failure.
+
+There are mainly three different things we can do to scale an application:
+
+1. Cloning
+    The easiest thing to do to scale a big application is to clone it multiple times and have each cloned instance 
+    handle part of the workload (with a load balancer, for example). This does not cost a lot in term of 
+    development time and it’s highly effective. This strategy is the minimum you should do and Node.js has 
+    the built-in module, cluster, to make it easier for you to implement the cloning strategy on a single server.
+
+2. Decomposing
+    We can also scale an application by decomposing it based on functionalities and services. This means having 
+    multiple, different applications with different code bases and sometimes with their own dedicated databases 
+    and User Interfaces.
+
+    This strategy is commonly associated with the term Microservice, where micro indicates that those services 
+    should be as small as possible, but in reality, the size of the service is not what’s important but rather 
+    the enforcement of loose coupling and high cohesion between services. The implementation of this strategy 
+    is often not easy and could result in long-term unexpected problems, but when done right the advantages are great.
+
+3. Splitting
+    We can also split the application into multiple instances where each instance is responsible for only a part 
+    of the application’s data. This strategy is often named horizontal partitioning, or sharding, in databases. 
+    Data partitioning requires a lookup step before each operation to determine which instance of the application to use. 
+(https://www.freecodecamp.org/news/scaling-node-js-applications-8492bd8afadc/#:~:text=The%20easiest%20thing%20to%20do,you%20should%20do%20and%20Node.)
 
 
 
 
 Question ~ What are CORS? How do you configure them? Why do you need them?
 Answer ~ 
+Cross-Origin Resource Sharing (CORS) is an HTTP-header based mechanism that allows a server to indicate any origins 
+(domain, scheme, or port) other than its own from which a browser should permit loading resources. CORS also relies 
+on a mechanism by which browsers make a "preflight" request to the server hosting the cross-origin resource, in 
+order to check that the server will permit the actual request. In that preflight, the browser sends headers that 
+indicate the HTTP method and headers that will be used in the actual request.
+(https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS)
 
 
 
 
 Question ~ What is rate limiting?
 Answer ~ 
+Rate limiting is a strategy for limiting network traffic. It puts a cap on how often someone can repeat an action 
+within a certain timeframe – for instance, trying to log in to an account. Rate limiting can help stop certain 
+kinds of malicious bot activity. It can also reduce strain on web servers.
+(https://www.cloudflare.com/en-in/learning/bots/what-is-rate-limiting/)
+
 
 
 
 
 Question ~ How does middlewares work in express?
 Answer ~ 
+Middleware functions are functions that have access to the request object ( req ), the response object ( res ), 
+and the next function in the application's request-response cycle. The next function is a function in the Express 
+router which, when invoked, executes the middleware succeeding the current middleware.
 
 
 
 
 Question ~ What is the difference between Encryption and Hashing?
 Answer ~ 
+Encryption is a two-way function where data is passed in as plaintext and comes out as ciphertext, which is unreadable. 
+Since encryption is two-way, the data can be decrypted so it is readable again. Hashing, on the other hand, is one-way, 
+meaning the plaintext is scrambled into a unique digest, through the use of a salt, that cannot be decrypted. 
+Technically, hashing can be reversed, but the computational power needed to decrypt it makes decryption infeasible.
+(https://www.encryptionconsulting.com/education-center/encryption-vs-hashing/#:~:text=Since%20encryption%20is%20two%2Dway,salt%2C%20that%20cannot%20be%20decrypted.)
 
 
 
 
 Question ~ What is the difference between https and http?
 Answer ~ 
+HTTPS is HTTP with encryption. The only difference between the two protocols is that HTTPS uses TLS (SSL) to 
+encrypt normal HTTP requests and responses. As a result, HTTPS is far more secure than HTTP. A website that uses
+HTTP has http:// in its URL, while a website that uses HTTPS has https://.
 
 
 
 
 Question ~ What is TLS?
 Answer ~ 
+Transport Layer Security (TLS) encrypts data sent over the Internet to ensure that eavesdroppers and hackers are 
+unable to see what you transmit which is particularly useful for private and sensitive information such as passwords, 
+credit card numbers, and personal correspondence. This page explains what TLS is, how it works, and why you should 
+deploy it.
+
+TLS is a cryptographic protocol that provides end-to-end security of data sent between applications over the 
+Internet. It is mostly familiar to users through its use in secure web browsing, and in particular the padlock 
+icon that appears in web browsers when a secure session is established.
+(https://www.internetsociety.org/deploy360/tls/basics/?gclid=Cj0KCQjwnNyUBhCZARIsAI9AYlE6OTkAeHxq-Ew173RF6gJ1lOcURliXha2Zb758o4eiKjs6SS0HS1waAk-xEALw_wcB)
 
 
 
 
 Question ~ What is AES?
 Answer ~ 
+Advanced Encryption Standard (AES) is a specification for the encryption of electronic data established by the 
+U.S National Institute of Standards and Technology (NIST) in 2001. AES is widely used today as it is a much 
+stronger than DES and triple DES despite being harder to implement.
+
+Points to remember
+    - AES is a block cipher.
+    - The key size can be 128/192/256 bits.
+    - Encrypts data in blocks of 128 bits each.
+
+That means it takes 128 bits as input and outputs 128 bits of encrypted cipher text as output. AES relies on 
+substitution-permutation network principle which means it is performed using a series of linked operations 
+which involves replacing and shuffling of the input data.
+(https://www.geeksforgeeks.org/advanced-encryption-standard-aes/)
+
 
 
 
 
 Question ~ What is JWT Token? Why do we need to use JWT? 
-Answer ~ 
+Answer ~
+JWT, or JSON Web Token, is an open standard used to share security information between two parties — a client 
+and a server. Each JWT contains encoded JSON objects, including a set of claims. JWTs are signed using a cryptographic 
+algorithm to ensure that the claims cannot be altered after the token is issued. 
 
 
 
 Question ~ What are some pros and cons?
 Answer ~ 
+pros - 
+    1. No Database Table
+    2. Simpler to use if careful
+    3. Used across services
+
+cons - 
+    1. Compromised Secret Key
+    2. Cannot manage client from the server
+    3. Cannot push Messages to clients
+    4. Crypto-algo can be deprecated
+    5. Data Overhead 
+    6. Complicated to understand
+(https://medium.com/@rahulgolwalkar/pros-and-cons-in-using-jwt-json-web-tokens-196ac6d41fb4#:~:text=JWT%20%3A%20It%20is%20a%20definitely,and%20used%20in%20every%20request.)
 
 
 
 
 Question ~ What is salting? Where do we store salt?
 Answer ~ 
+Salting is the process of adding unique random strings of characters to passwords in a database or each password 
+before the password is hashed (a term we'll come back to). This is done to change the hash and make passwords more 
+secure. The string of characters added to the password is called the salt. A salt can be added in front or behind 
+a password.
+(https://www.makeuseof.com/what-is-salting/)
+The easiest way is to put the salt in front of the password and hash the combined text string. The salt is not 
+an encryption key, so it can be stored in the password database along with the username – it serves merely to 
+prevent two users with the same password getting the same hash.
+(https://nakedsecurity.sophos.com/2013/11/20/serious-security-how-to-store-your-users-passwords-safely/)
 
 
 
 
 Question ~ What is the difference between authorisation and Authentication?
 Answer ~ 
+So, what is the difference between authentication and authorization? Simply put, authentication is the process of 
+verifying who someone is, whereas authorization is the process of verifying what specific applications, files, 
+and data a user has access to.
+
+In the digital world, authentication and authorization accomplish these same goals. Authentication is used to 
+verify that users really are who they represent themselves to be. Once this has been confirmed, authorization 
+is then used to grant the user permission to access different levels of information and perform specific functions, 
+depending on the rules established for different types of users.
+(https://www.sailpoint.com/identity-library/difference-between-authentication-and-authorization/#:~:text=So%2C%20what%20is%20the%20difference,a%20user%20has%20access%20to.)
 
 
 
 
 Question ~ What is the difference between JS on the browser and node?
 Answer ~ 
+JavaScript is a simple programming language that runs in any browser JavaScript Engine. Whereas Node JS is an 
+interpreter or running environment for a JavaScript programming language that holds many excesses, it requires 
+libraries that can easily be accessed from JavaScript programming for better use.
 
 
 
 
-Question ~ What is V8?Answer ~ 
+Question ~ What is V8?
+Answer ~ 
+V8 is Google’s open source high-performance JavaScript and WebAssembly engine, written in C++. It is used in Chrome 
+and in Node.js, among others. It implements ECMAScript and WebAssembly, and runs on Windows 7 or later, macOS 10.12+, 
+and Linux systems that use x64, IA-32, ARM, or MIPS processors. V8 can run standalone, or can be embedded into any 
+C++ application.
