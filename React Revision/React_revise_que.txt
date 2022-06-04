@@ -1,0 +1,141 @@
+Question : Explain redux to a 5 year old (ELI5) ?
+Answer : 
+
+Question : What is immutability?
+Answer : 
+Immutability is a concept that React programmers need to understand. An immutable value or object cannot be 
+changed, so every update creates new value, leaving the old one untouched.
+
+
+
+
+
+Question : What does Object.freeze() do?
+Answer : 
+method Object.freeze() which is used to freeze an object. Freezing an object does not allow new properties 
+to be added to an object and prevents from removing or altering the existing properties. Object.freeze() 
+preserves the enumerability, configurability, writability and the prototype of the object. It returns the 
+passed object and does not create a frozen copy.
+
+Applications: 
+    - Object.freeze() is used for freezing objects and arrays.
+    - Object.freeze() is used to make an object immutable.
+(geeksforgeeks)
+
+
+
+
+
+Question : Why is immutability required by Redux?
+Answer : 
+Immutability of redux state is necessary since it allows detecting redux state changes in an efficient manner. 
+This implies that whenever we want to modify a redux state, we must create a new copy of it and do modifications 
+to that copy - which then becomes the new redux state.
+(https://supertokens.com/blog/why-is-redux-state-immutable#:~:text=Immutability%20of%20redux%20state%20is,becomes%20the%20new%20redux%20state.)
+
+
+
+
+
+Question : How does Redux use shallow equality checking?
+Answer : 
+Redux uses shallow equality checking in its combineReducers function to return either a new mutated copy of the 
+root state object, or, if no mutations have been made, the current root state object.
+(https://redux.js.org/faq/immutable-data)
+
+
+
+
+
+Question : How well does Redux “scale” in terms of performance and architecture?
+Answer : 
+The work done by Redux generally falls into a few areas: processing actions in middleware and reducers (including 
+object duplication for immutable updates), notifying subscribers after actions are dispatched, and updating UI 
+components based on the state changes. While it's certainly possible for each of these to become a performance 
+concern in sufficiently complex situations, there's nothing inherently slow or inefficient about how Redux is 
+implemented. In fact, React Redux in particular is heavily optimized to cut down on unnecessary re-renders, 
+and React-Redux v5 shows noticeable improvements over earlier versions.
+
+As for architecture, anecdotal evidence is that Redux works well for varying project and team sizes. Redux is 
+currently used by hundreds of companies and thousands of developers, with several hundred thousand monthly 
+installations from NPM.
+(https://redux.js.org/faq/performance#how-well-does-redux-scale-in-terms-of-performance-and-architecture)
+
+
+
+
+
+Question : How does Redux compare to the React Context API?
+Answer :
+Context API: 
+    In a typical React application, data is passed top-down (parent to child) via props, but such usage can be cumbersome
+    for certain types of props (e.g. locale preference, UI theme) that are required by many components within an 
+    application. Context provides a way to share values like these between components without having to explicitly 
+    pass a prop through every level of the tree. Context API is a built-in React tool that does not influence the 
+    final bundle size, and is integrated by design. 
+
+Redux:
+    Redux is a predictable state container for JavaScript apps.
+
+    It helps you write applications that behave consistently, run in different environments (client, server, and native), 
+    and are easy to test. On top of that, it provides a great developer experience, such as live code editing combined 
+    with a time-traveling debugger.
+
+    You can use Redux together with React, or with any other view library. It is tiny (2kB, including dependencies), 
+    but has a large ecosystem of addons available.
+
+    Redux is an Open Source Library which provides a central store, and actions to modify the store. It can be 
+    used with any project using JavaScript or TypeScript, but since we are comparing it to Context API, so we will 
+    stick to React-based Applications.
+    (https://dev.to/ruppysuppy/redux-vs-context-api-when-to-use-them-4k3p)
+
+
+
+
+
+Question : What is webpack ?
+Answer : 
+Webpack is a free and open-source module bundler for JavaScript. It is made primarily for JavaScript, 
+but it can transform front-end assets such as HTML, CSS, and images if the corresponding loaders are included. 
+Webpack takes modules with dependencies and generates static assets representing those modules.
+
+At its core, webpack is a static module bundler for modern JavaScript applications. When webpack processes your 
+application, it internally builds a dependency graph from one or more entry points and then combines every module 
+your project needs into one or more bundles, which are static assets to serve your content from.
+(https://webpack.js.org/concepts/)
+
+
+
+
+
+Question : What is treeshaking ?
+Answer : 
+Tree shaking is a term commonly used within a JavaScript context to describe the removal of dead code.
+
+It relies on the import and export statements in ES2015 to detect if code modules are exported and imported for 
+use between JavaScript files.
+
+In modern JavaScript applications, we use module bundlers (e.g., webpack or Rollup) to automatically remove dead 
+code when bundling multiple JavaScript files into single files. This is important for preparing code that is 
+production ready, for example with clean structures and minimal file size.
+(https://developer.mozilla.org/en-US/docs/Glossary/Tree_shaking)
+
+
+
+
+
+Question : What are some features of using webpack?
+Answer : 
+4 Key Concepts of Webpack
+    - Entry. Webpack creates a graph of all of your application's dependencies.
+    - Output. Once you've bundled all of your assets together, we still need to tell Webpack where to bundle 
+      our application.
+    - Loaders
+    - Plugins
+
+
+
+
+
+
+
