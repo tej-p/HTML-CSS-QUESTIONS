@@ -1,5 +1,24 @@
-Question ~ What are SQL Databases? What are some companies that use Mongo, what type of applications are these?
+Question ~ What are SQL Databases? What are some companies that use SQL, what type of applications are these?
 Answer ~
+A database in SQL Server is made up of a collection of tables that stores a specific set of structured data. 
+A table contains a collection of rows, also referred to as records or tuples, and columns, also referred to 
+as attributes. Each column in the table is designed to store a certain type of information, for example, dates, 
+names, dollar amounts, and numbers.
+(https://docs.microsoft.com/en-us/sql/relational-databases/databases/databases?view=sql-server-ver16)
+
+Some of the major organizations that make use of SQL include:
+    - Microsoft.
+    - NTT Data.
+    - Cognizant.
+    - Dell.
+    - Accenture.
+    - Stack Overflow
+
+use - 
+    - ETL Tools like Informatica, Talend, Pentaho, SSIS
+    - Analytical tools like KNIME, RapidMiner
+    - Back-end programming languages like PHP and Python
+    - BI tools like Tableau, PowerBI, even Excel
 
 
 
@@ -7,6 +26,31 @@ Answer ~
 
 Question ~ What are NoSQL Databases? What are some companies that use Mongo, what type of applications are these?
 Answer ~
+NoSQL database technology stores information in JSON documents instead of columns and rows used by relational 
+databases. To be clear, NoSQL stands for “not only SQL” rather than “no SQL” at all. This means a NoSQL JSON 
+database can store and retrieve data using literally “no SQL.” Or you can combine the flexibility of JSON with 
+the power of SQL for the best of both worlds. Consequently, NoSQL databases are built to be flexible, scalable, 
+and capable of rapidly responding to the data management demands of modern businesses.
+(https://www.couchbase.com/resources/why-nosql)
+
+companies reportedly use MongoDB-
+    - Uber.
+    - LaunchDarkly.
+    - Delivery Hero.
+    - Lyft.
+    - KAVAK.
+    - HENNGE K.K.
+    etc.
+
+applications which use mongo - 
+    - IBM
+    - Twitter
+    - Zendesk
+    - Forbes
+    - Facebook
+    - Google
+    etc.
+
 
 
 
@@ -14,6 +58,10 @@ Answer ~
 
 Question ~ What is the difference between SQL and NoSQL databases?
 Answer ~
+SQL databases are vertically scalable, while NoSQL databases are horizontally scalable. SQL databases are 
+table-based, while NoSQL databases are document, key-value, graph, or wide-column stores. SQL databases are 
+better for multi-row transactions, while NoSQL is better for unstructured data like documents or JSON.
+
 
 
 
@@ -21,6 +69,13 @@ Answer ~
 
 Question ~ What are some features of MongoDB?
 Answer ~
+MongoDB's top five technical features:
+    - Ad-hoc queries for optimized, real-time analytics.
+    - Indexing appropriately for better query executions.
+    - Replication for better data availability and stability.
+    - Sharding.
+    - Load balancing.
+(https://www.mongodb.com/what-is-mongodb/features)
 
 
 
@@ -28,6 +83,9 @@ Answer ~
 
 Question ~ What are aggregate queries?
 Answer ~
+An aggregate query is a method of deriving group and subgroup data by analysis of a set of individual data entries. 
+The term is frequently used by database developers and database administrators.
+(https://www.idera.com/glossary/aggregate-query#:~:text=An%20aggregate%20query%20is%20a,database%20developers%20and%20database%20administrators.)
 
 
 
@@ -35,6 +93,10 @@ Answer ~
 
 Question ~ What are pipelines in aggregation?
 Answer ~
+An aggregation pipeline consists of one or more stages that process documents: Each stage performs an 
+operation on the input documents. For example, a stage can filter documents, group documents, and calculate 
+values. The documents that are output from a stage are passed to the next stage.
+(https://www.mongodb.com/docs/manual/core/aggregation-pipeline/#:~:text=An%20aggregation%20pipeline%20consists%20of,passed%20to%20the%20next%20stage.)
 
 
 
