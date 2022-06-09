@@ -7,19 +7,21 @@ import axios from "axios";
 function App() {
   const [item, setItem] = useState([]);
   const [pages, setPages] = useState(0);
+  const [sortValue, setSortValue] = useState("");
   const limit = 25;
+  const sortOptions = ["id", "date", "first_name"]
 
   useEffect(() => {
-    const getPhotos = async() => {
+    const getPhotos = async () => {
       const res = await fetch(
         `http://localhost:3005/data?_page=1&_limit=${limit}`
       );
       const data = await res.json();
       // console.log("result : ",data)
-      const total = res.headers.get('x-total-count');
+      const total = res.headers.get("x-total-count");
       // console.log("photos : ", total)
       // console.log("total - ",Math.ceil(total/25))
-      setPages(total/25);
+      setPages(total / 25);
       setItem(data);
     };
 
@@ -40,7 +42,7 @@ function App() {
       `http://localhost:3005/data?_page=${pageNo}&_limit=${limit}`
     );
     const data = await res.json();
-    console.log("newData : ",data)
+    console.log("newData : ", data);
     return data;
   };
 
@@ -51,8 +53,21 @@ function App() {
     setItem(photos);
   };
 
+  const handleChange = () => {
+    console.log(1);
+  }
+
   return (
     <div className="App">
+      <div>
+        <h5>Sort by - </h5>
+        <select onChange={handleChange} value={sortValue}>
+          <option>Select value</option>
+          {sortOptions.map((e, i) => (
+              <option value={e} key={i}>{e}</option>
+          )) }
+        </select>
+      </div>
       <div className="mainDiv">
         {item.map((e) => (
           <div key={e.id} className="itemDiv">

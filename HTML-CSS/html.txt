@@ -1,36 +1,35 @@
 Question-What is !important?
-
 Answer-
 In CSS, important means that only the ! important property value is to be applied to an element and
 all other declarations on the element are to be ignored. In other words, an important rule can be
 used to override other styling rules in CSS.
 
-Question-What is the box model?
 
+Question-What is the box model?
 Answer-
 In CSS, the term "box model" is used when talking about design and layout.The CSS box model is
 essentially a box that wraps around every HTML element. It consists of: margins, borders, padding,
 and the actual content.
 
-Question-What is the difference between position absolute, relative and fixed?
 
+Question-What is the difference between position absolute, relative and fixed?
 Answer-
 Relative Position: 
                 Setting the top, right, bottom, and left properties of an element with
-position: relative; property will cause it to adjust from its normal position. The other objects or
-elements will not fill the gap.
+        position: relative; property will cause it to adjust from its normal position. The other objects or
+        elements will not fill the gap.
 
 Absolute Position: 
                 An element with position: absolute; will cause it to adjust its position with 
-respect to its parent. If no parent is present, then it uses the document body as parent.
+        respect to its parent. If no parent is present, then it uses the document body as parent.
 
 Fixed Position:
             Position: fixed; property applied to an element will cause it to always stay in the same 
-place even if the page is scrolled. To position the element we use top, right, bottom, left 
-properties.
+        place even if the page is scrolled. To position the element we use top, right, bottom, left 
+        properties.
+
 
 Question-What is CSS positioning?
-
 Answer-
 The CSS position property is used to set position for an element. it is also used to place an element
 behind another and also useful for scripted animation effect.
@@ -46,8 +45,8 @@ CSS Fixed Positioning
 CSS Relative Positioning
 CSS Absolute Positioning
 
-Question-the difference between display none and display hidden
 
+Question-the difference between display none and display hidden
 Answer-
 the difference between display: “none”; and visibility: “hidden”; right from the name itself we can 
 tell the difference as display: “none”; completely gets rids of the tag, as it had never existed in 
@@ -353,16 +352,16 @@ render a page in an Iframe by have its value set as any of the following:
 Question-What are some performance metrics for your website?
 
 Answer-
-1. Website Speed
-2. Time to Title
-3. Time to Start Render
-4. Time to Interact
-5. DNS Lookup Speed
-6. Bounce Rate
-7. Requests Per Second
-8. Error Rate
-9. Time to First Byte/Last Byte
-10. Conversion Rate
+        1. Website Speed
+        2. Time to Title
+        3. Time to Start Render
+        4. Time to Interact
+        5. DNS Lookup Speed
+        6. Bounce Rate
+        7. Requests Per Second
+        8. Error Rate
+        9. Time to First Byte/Last Byte
+        10. Conversion Rate
 
 Question-What does the following term mean?
                 Time to first byte,
