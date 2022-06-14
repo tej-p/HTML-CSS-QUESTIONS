@@ -7,19 +7,19 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
         integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-    <title>URL shortener</title>
+    <title>Document</title>
 </head>
 
 <body>
-    <div class="container">
+    <div class="main">
         <h1>URL Shortener</h1>
-        <form action="/shortUrls" method="POST" class="my-4 form-inline">
+        <form action="/newUrl" method="POST" class="my-4 form-inline">
             <label for="actualUrl" class="sr-only">Url</label>
             <input required placeholder="Url" type="url" name="actualUrl" id="actualUrl" class="form-control col mr-2">
-            <button class="btn btn-success" type="submit">New</button>
+            <button class="btn" type="submit">Create new</button>
         </form>
 
-        <table class="table table-striped table-responsive">
+        <table class="table table-responsive">
             <thead>
                 <tr>
                     <th>actual URL</th>
