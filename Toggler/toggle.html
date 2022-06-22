@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+        body{
+            margin: auto;
+        }
+        button{
+            padding: 10px;
+            background-color: blueviolet;
+            color: white;
+        }
+    </style>
+  </head>
+  <body>
+    <h2>Number : <span id="num">1</span></h2>
+    <button onclick=toggler()>Toggle</button>
+  </body>
+</html>
+<script>
+  let count = 0;
+const toggler = () => {
+
+    var num = document.getElementById("num");
+    console.log(num);
+
+        if(num.innerHTML == 1){
+            num.innerHTML = 2;
+        }
+        else if(num.innerHTML == 2){
+            num.innerHTML = 3;
+        }
+        else if(num.innerHTML == 3){
+            num.innerHTML = 1;
+        }
+  }    
+
+</script>
